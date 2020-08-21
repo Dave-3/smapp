@@ -6,7 +6,7 @@ $this->title = 'Shamba Map';
 ?>
 <!-- Banner
 ================================================== -->
-<div class="main-search-container centered" data-background-image="images/main-search-background-01.jpg">
+<div class="main-search-container centered" data-background-image="<?= Yii::$app->request->baseUrl;?>/images/main-search-background-01.jpg">
 	<div class="main-search-inner">
 
 		<div class="container">
@@ -17,7 +17,7 @@ $this->title = 'Shamba Map';
 						<!-- Typed words can be configured in script settings at the bottom of this HTML file -->
 						<span class="typed-words"></span>
 					</h2>
-					<h4>Expolore top-rated attractions, activities and more</h4>
+					<h4>Expolore top-rated apartments, plots and more</h4>
 
 					<div class="main-search-input">
 						<div class="main-search-input-item location">
@@ -38,28 +38,22 @@ $this->title = 'Shamba Map';
 					  
 					<div class="highlighted-categories">
 						<!-- Box -->
-						<a href="listings-list-with-sidebar.html" class="highlighted-category">
+						<a href="#" class="highlighted-category">
 					    	<i class="im im-icon-Home"></i>
 					    	<h4>Apartments</h4>
 						</a>	
 
 						<!-- Box -->
-						<a href="listings-list-full-width.html" class="highlighted-category">
-					    	<i class="im im-icon-Hamburger"></i>
-					    	<h4>Eat &amp; Drink</h4>
+						<a href="#" class="highlighted-category">
+					    	<i class="im im-icon-Geo"></i>
+					    	<h4>Plot</h4>
 						</a>	
 
 						<!-- Box -->
-						<a href="listings-half-screen-map-list.html" class="highlighted-category">
-					    	<i class="im im-icon-Electric-Guitar"></i>
-					    	<h4>Events</h4>
-						</a>	
-
-						<!-- Box -->
-						<a href="listings-half-screen-map-list.html" class="highlighted-category">
-					    	<i class="im im-icon-Dumbbell"></i>
-					    	<h4>Fitness</h4>
-						</a>		
+						<a href="#" class="highlighted-category">
+					    	<i class="im im-icon-House fill"></i>
+					    	<h4>Real Estate Companies</h4>
+						</a>								
 					</div>
 					
 				</div>
@@ -85,83 +79,12 @@ $this->title = 'Shamba Map';
 					
 				</h3>
 			</div>
-
 			<div class="col-md-12">
+				
 				<div class="simple-slick-carousel dots-nav">
-
 				<!-- Listing Item -->
 				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
-						<div class="listing-item">
-							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-01.jpg" alt="">
-
-							<div class="listing-badge now-open">Now Open</div>
-							
-							<div class="listing-item-content">
-								<span class="tag">Eat & Drink</span>
-								<h3>Tom's Restaurant <i class="verified-icon"></i></h3>
-								<span>964 School Street, New York</span>
-							</div>
-							<span class="like-icon"></span>
-						</div>
-						<div class="star-rating" data-rating="3.5">
-							<div class="rating-counter">(12 reviews)</div>
-						</div>
-					</a>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
-						<div class="listing-item">
-							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-02.jpg" alt="">
-							<div class="listing-item-details">
-								<ul>
-									<li>Friday, August 10</li>
-								</ul>
-							</div>
-							<div class="listing-item-content">
-								<span class="tag">Events</span>
-								<h3>Sticky Band</h3>
-								<span>Bishop Avenue, New York</span>
-							</div>
-							<span class="like-icon"></span>
-						</div>
-						<div class="star-rating" data-rating="5.0">
-							<div class="rating-counter">(23 reviews)</div>
-						</div>
-					</a>
-				</div>
-				<!-- Listing Item / End -->		
-
-				<!-- Listing Item -->
-				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
-						<div class="listing-item">
-							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-03.jpg" alt="">
-							<div class="listing-item-details">
-								<ul>
-									<li>Starting from $59 per night</li>
-								</ul>
-							</div>
-							<div class="listing-item-content">
-								<span class="tag">Hotels</span>
-								<h3>Hotel Govendor</h3>
-								<span>778 Country Street, New York</span>
-							</div>
-							<span class="like-icon"></span>
-						</div>
-						<div class="star-rating" data-rating="2.0">
-							<div class="rating-counter">(17 reviews)</div>
-						</div>
-					</a>
-				</div>
-				<!-- Listing Item / End -->
-
-				<!-- Listing Item -->
-				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
+					<a href="#" class="listing-item-container">
 						<div class="listing-item">
 							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-04.jpg" alt="">
 
@@ -172,10 +95,11 @@ $this->title = 'Shamba Map';
 								<h3>Burger House <i class="verified-icon"></i></h3>
 								<span>2726 Shinn Street, New York</span>
 							</div>
+							
 							<span class="like-icon"></span>
 						</div>
-						<div class="star-rating" data-rating="5.0">
-							<div class="rating-counter">(31 reviews)</div>
+						<div class="star-rating centered" >
+							<div class="rating-counter"><a href="#" class="button border margin-top-10">Learn More</a></div>
 						</div>
 					</a>
 				</div>
@@ -183,7 +107,7 @@ $this->title = 'Shamba Map';
 
 				<!-- Listing Item -->
 				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
+					<a href="#" class="listing-item-container">
 						<div class="listing-item">
 							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-05.jpg" alt="">
 							<div class="listing-item-content">
@@ -202,7 +126,7 @@ $this->title = 'Shamba Map';
 
 				<!-- Listing Item -->
 				<div class="carousel-item">
-					<a href="listings-single-page.html" class="listing-item-container">
+					<a href="#" class="listing-item-container">
 						<div class="listing-item">
 							<img src="<?= Yii::$app->request->baseUrl;?>/images/listing-item-06.jpg" alt="">
 
@@ -304,7 +228,7 @@ $this->title = 'Shamba Map';
 			<!-- Blog post Item / End -->
 
 			<div class="col-md-12 centered-content">
-				<a href="pages-blog.html" class="button border margin-top-10">View Blog</a>
+				<a href="#" class="button border margin-top-10">View Blog</a>
 			</div>
 
 		</div>

@@ -50,13 +50,7 @@ use yii\helpers\Url;
 						<li>
 							<a href="#">Sellers</a>
 						</li>
-						<li>
-							<a href="<?= Url::to(['site/signup'])?>">SignUp</a>
-						</li>
-
-						<li>
-							<a href="<?= Url::to(['site/login'])?>">LogIn</a>
-						</li>
+						
 					</ul>
 				</nav>
 				<div class="clearfix"></div>
@@ -65,26 +59,46 @@ use yii\helpers\Url;
 			</div>
 			<!-- Left Side Content / End -->
 
-
-			<!-- Right Side Content / End -->
-			<div class="right-side">
-				
-				<div class="header-widget">
-					<!-- User Menu -->
-					<div class="user-menu">
-						<div class="user-name"><span><img src="<?= Yii::$app->request->baseUrl;?>/images/dashboard-avatar.jpg" alt=""></span>Hi, Tom!</div>
-						<ul>
-							<li><a href="<?= Url::to(['dashboard/panel'])?>"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-							<li><a href="<?= Url::to(['dashboard/message'])?>"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
-							<li><a href="<?= Url::to(['dashboard/booking'])?>"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
-							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
-						</ul>
-					</div>
-					
-					<a href="<?= Url::to(['dashboard/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
-				</div>
-			</div>
-			<!-- Right Side Content / End -->
+           			 <?php if (Yii::$app->user->isGuest){?>
+           				 <!-- Right Side Content / End -->
+           				 	
+                            			<div class="right-side">
+                            				<nav id="navigation" class="style-1">
+                            					<ul id="responsive">
+                            
+                            					<li>
+                                        			<a href="<?= Url::to(['site/signup'])?>">SignUp&LogIn</a>
+                                        		</li>
+                                        
+                            					</ul>
+                            				</nav>
+                            				
+                            			</div>
+                            			<!-- Right Side Content / End -->
+            						
+            			<?php }else if(Yii::$app->user){?>
+            						<!-- Right Side Content / End -->
+                            			<div class="right-side">
+                            				
+                            				<div class="header-widget">
+                            					<!-- User Menu -->
+                            					<div class="user-menu">
+                            						<div class="user-name"><span><img src="<?= Yii::$app->request->baseUrl;?>/images/dashboard-avatar.jpg" alt=""></span>Hi, Tom!</div>
+                            						<ul>
+                            							<li><a href="<?= Url::to(['dashboard/panel'])?>"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+                            							<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+                            							<li><a href="#"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+                            							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
+                            						</ul>
+                            					</div>
+                            					
+                            					<a href="<?= Url::to(['dashboard/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+                            				</div>
+                            			</div>
+                            			<!-- Right Side Content / End -->
+            						
+						<?php }?>
+			
 
 			<!-- Sign In Popup -->
 			<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
