@@ -59,27 +59,16 @@ use yii\helpers\Url;
 			</div>
 			<!-- Left Side Content / End -->
 
+			 <!-- Right Side Content -->
            			 <?php if (Yii::$app->user->isGuest){?>
-           				 <!-- Right Side Content / End -->
-           				 	
-                            			<div class="right-side">
-                            				<nav id="navigation" class="style-1">
-                            					<ul id="responsive">
-                            
-                            					<li>
-                                        			<a href="<?= Url::to(['site/signup'])?>">SignUp&LogIn</a>
-                                        		</li>
-                                        
-                            					</ul>
-                            				</nav>
-                            				
-                            			</div>
-                            			<!-- Right Side Content / End -->
-            						
+            			<div class="right-side">
+            				<div class="header-widget">
+            					<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
+            					<a href="#" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+            				</div>
+            			</div>
             			<?php }else if(Yii::$app->user){?>
-            						<!-- Right Side Content / End -->
                             			<div class="right-side">
-                            				
                             				<div class="header-widget">
                             					<!-- User Menu -->
                             					<div class="user-menu">
@@ -91,15 +80,12 @@ use yii\helpers\Url;
                             							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
                             						</ul>
                             					</div>
-                            					
                             					<a href="<?= Url::to(['dashboard/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
                             				</div>
                             			</div>
-                            			<!-- Right Side Content / End -->
-            						
 						<?php }?>
+					<!-- Right Side Content / End -->
 			
-
 			<!-- Sign In Popup -->
 			<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 
@@ -192,7 +178,6 @@ use yii\helpers\Url;
 				</div>
 			</div>
 			<!-- Sign In Popup / End -->
-
 		</div>
 	</div>
 	<!-- Header / End -->

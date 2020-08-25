@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Shamba Map';
@@ -24,9 +26,9 @@ $this->title = 'Shamba Map';
 							<div id="autocomplete-container">
 								<input id="autocomplete-input" type="text" placeholder="Enter the area,city,county,address or neighorhood">
 							</div>
-							<a href="#"><i class="fa fa-map-marker"></i></a>
+							<a href="<?= Url::to(['map/map'])?>"><i class="fa fa-map-marker"></i></a>
 						</div>
-						<button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+						<button class="button" onclick="window.location.href='map/map'">Search</button>
 					</div>
 				</div>
 			</div>
