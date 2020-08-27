@@ -13,27 +13,27 @@ use yii\helpers\Url;
 
 			<ul data-submenu-title="Main">
 				<li ><a href="<?= Url::to(['dashboard/panel'])?>"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-				<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li>
-				<li><a href="#"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
-				<li><a href="#"><i class="sl sl-icon-wallet"></i> Wallet</a></li>
+				<li><a href="<?= Url::to(['message/message'])?>"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li>
+				<li><a href="<?= Url::to(['booking/booking'])?>"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+				<li><a href="<?= Url::to(['wallet/wallet'])?>"><i class="sl sl-icon-wallet"></i> Wallet</a></li>
 			</ul>
 			
 			<ul data-submenu-title="Listings">
 				<li><a><i class="sl sl-icon-layers"></i> My Listings</a>
 					<ul>
-						<li><a href="#">Active <span class="nav-tag green">6</span></a></li>
-						<li><a href="#">Pending <span class="nav-tag yellow">1</span></a></li>
-						<li><a href="#">Expired <span class="nav-tag red">2</span></a></li>
+						<li><a href="<?= Url::to(['listing/active'])?>">Active <span class="nav-tag green">6</span></a></li>
+						<li><a href="<?= Url::to(['listing/pending'])?>">Pending <span class="nav-tag yellow">1</span></a></li>
+						<li><a href="<?= Url::to(['listing/expired'])?>">Expired <span class="nav-tag red">2</span></a></li>
 					</ul>	
 				</li>
-				<li><a href="#"><i class="sl sl-icon-star"></i> Reviews</a></li>
-				<li><a href="#"><i class="sl sl-icon-heart"></i> Bookmarks</a></li>
-				<li><a href="#"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
+				<li><a href="<?= Url::to(['review/review'])?>"><i class="sl sl-icon-star"></i> Reviews</a></li>
+				<li><a href="<?= Url::to(['bookmark/bookmark'])?>"><i class="sl sl-icon-heart"></i> Bookmarks</a></li>
+				<li><a href="<?= Url::to(['addlisting/add-listing'])?>"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
 			</ul>	
 
 			<ul data-submenu-title="Account">
-				<li><a href="#"><i class="sl sl-icon-user"></i> My Profile</a></li>
-				<li><a href="<?= Url::to(['site/index'])?>"><i class="sl sl-icon-power"></i> Logout</a></li>
+				<li><a href="<?= Url::to(['profile/profile'])?>"><i class="sl sl-icon-user"></i> My Profile</a></li>
+				<li><a href="<?= Url::to(['site/logout'])?>" data-method="post"><i class="sl sl-icon-power"></i> Logout</a></li>
 			</ul>
 			
 		</div>

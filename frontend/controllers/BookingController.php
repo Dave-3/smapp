@@ -8,12 +8,13 @@ use yii\web\Controller;
 /**
  * Dashboard controller
  */
-class DashboardController extends Controller
+class BookingController extends Controller
 {
     public $layout = 'dash';
     
-    public function actionPanel()
+    public function actionBooking()
     {
-        return $this->render('dashboard');
+        return $this->render('booking');
     }
+   
 }

@@ -23,7 +23,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="transparent-header ">
+<body>
 <!-- Wrapper -->
 <div id="wrapper">
 <?php $this->beginBody() ?>

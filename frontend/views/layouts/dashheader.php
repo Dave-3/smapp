@@ -15,8 +15,8 @@ use yii\helpers\Url;
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="<?= Url::to(['site/index'])?>"><img src="images/logo.png" alt=""></a>
-					<a href="<?= Url::to(['site/index'])?>" class="dashboard-logo"><img src="images/logo2.png" alt=""></a>
+					<a href="<?= Url::to(['site/index'])?>"><img src="<?= Yii::$app->request->baseUrl;?>/images/logo.png" alt=""></a>
+					<a href="<?= Url::to(['site/index'])?>" class="dashboard-logo"><img src="<?= Yii::$app->request->baseUrl;?>/images/logo2.png" alt=""></a>
 				</div>
 
 				<!-- Mobile Navigation -->
@@ -63,16 +63,16 @@ use yii\helpers\Url;
 					
 					<!-- User Menu -->
 					<div class="user-menu">
-						<div class="user-name"><span><img src="images/dashboard-avatar.jpg" alt=""></span>My Account</div>
+						<div class="user-name"><span><img src="<?= Yii::$app->request->baseUrl;?>/images/dashboard-avatar.jpg" alt=""></span>My Account</div>
 						<ul>
 							<li><a href="<?= Url::to(['dashboard/panel'])?>"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 							<li><a href="<?= Url::to(['dashboard/message'])?>"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
-							<li><a href="<?= Url::to(['dashboard/booking'])?>"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
-							<li><a href="<?= Url::to(['site/index'])?>"><i class="sl sl-icon-power"></i> Logout</a></li>
+							<li><a href="<?= Url::to(['booking/booking'])?>"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+							<li><a href="<?= Url::to(['site/logout'])?>" data-method="post"><i class="sl sl-icon-power"></i> Logout</a></li>
 						</ul>
 					</div>
 
-					<a href="<?= Url::to(['dashboard/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+					<a href="<?= Url::to(['addlisting/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
 				</div>
 				<!-- Header Widget / End -->
 			</div>

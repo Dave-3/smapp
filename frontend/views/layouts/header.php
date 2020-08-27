@@ -1,5 +1,12 @@
 <?php 
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+
+$model = new LoginForm();
+$signupmodel = new SignupForm()
 
 ?>
 
@@ -77,7 +84,7 @@ use yii\helpers\Url;
                             							<li><a href="<?= Url::to(['dashboard/panel'])?>"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
                             							<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
                             							<li><a href="#"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
-                            							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
+                            							<li><a href="<?= Url::to(['site/logout'])?>" data-method="post"> <i class="sl sl-icon-power"></i> Logout</a></li>
                             						</ul>
                             					</div>
                             					<a href="<?= Url::to(['dashboard/add-listing'])?>" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
@@ -105,73 +112,42 @@ use yii\helpers\Url;
 
 						<!-- Login -->
 						<div class="tab-content" id="tab1" style="display: none;">
-							<form method="post" class="login">
+						 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-								<p class="form-row form-row-wide">
-									<label for="username">Username:
-										<i class="im im-icon-Male"></i>
-										<input type="text" class="input-text" name="username" id="username" value="" />
-									</label>
-								</p>
-
-								<p class="form-row form-row-wide">
-									<label for="password">Password:
-										<i class="im im-icon-Lock-2"></i>
-										<input class="input-text" type="password" name="password" id="password"/>
-									</label>
-									<span class="lost_password">
-										<a href="#" >Lost Your Password?</a>
-									</span>
-								</p>
-
-								<div class="form-row">
-									<input type="submit" class="button border margin-top-5" name="login" value="Login" />
-									<div class="checkboxes margin-top-10">
-										<input id="remember-me" type="checkbox" name="check">
-										<label for="remember-me">Remember Me</label>
-									</div>
-								</div>
-								
-
-							</form>
+                            <?= $form->field($model, 'username')->textInput(['class'=>'im im-icon-Male','autofocus' => true]) ?>
+            
+                            <?= $form->field($model, 'password')->passwordInput() ?>
+            
+                            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+            
+                            <div style="color:#999;margin:1em 0">
+                                If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
+                                <br>
+                                Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
+                            </div>
+            
+                            <div class="form-group">
+                                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                            </div>
+            
+                        <?php ActiveForm::end(); ?>
 						</div>
 
 						<!-- Register -->
 						<div class="tab-content" id="tab2" style="display: none;">
+						 <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-							<form method="post" class="register">
-								
-							<p class="form-row form-row-wide">
-								<label for="username2">Username:
-									<i class="im im-icon-Male"></i>
-									<input type="text" class="input-text" name="username" id="username2" value="" />
-								</label>
-							</p>
-								
-							<p class="form-row form-row-wide">
-								<label for="email2">Email Address:
-									<i class="im im-icon-Mail"></i>
-									<input type="text" class="input-text" name="email" id="email2" value="" />
-								</label>
-							</p>
-
-							<p class="form-row form-row-wide">
-								<label for="password1">Password:
-									<i class="im im-icon-Lock-2"></i>
-									<input class="input-text" type="password" name="password1" id="password1"/>
-								</label>
-							</p>
-
-							<p class="form-row form-row-wide">
-								<label for="password2">Repeat Password:
-									<i class="im im-icon-Lock-2"></i>
-									<input class="input-text" type="password" name="password2" id="password2"/>
-								</label>
-							</p>
-
-							<input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
-	
-							</form>
+                            <?= $form->field($signupmodel, 'username')->textInput(['autofocus' => true]) ?>
+            
+                            <?= $form->field($signupmodel, 'email') ?>
+            
+                            <?= $form->field($signupmodel, 'password')->passwordInput() ?>
+            
+                            <div class="form-group">
+                                <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                            </div>
+            
+                        <?php ActiveForm::end(); ?>
 						</div>
 
 					</div>
